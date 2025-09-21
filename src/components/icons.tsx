@@ -48,7 +48,13 @@ import {
   Copy,
   Shield,
   Smartphone,
-} from "lucide-react"
+  TicketPercent, // Coupon
+  Workflow, // Operations
+  IdCard, // Membership
+  Users2, // Agents (alternative user icon)
+  Link2, // OneLink
+  Package, // Pickup Points
+} from "lucide-react";
 
 export const Icons = {
   spinner: Loader2,
@@ -132,4 +138,23 @@ export const Icons = {
   shield: Shield,
   smartphone: Smartphone,
   x: X,
-}
+
+  // New icons
+  coupon: TicketPercent,
+  operations: Workflow,
+  membership: IdCard,
+  agents: Users2,
+  oneLink: Link2,
+  pickupPoints: Package,
+
+  instagram: ({ ...props }) => (
+    <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5h-8.5zm4.25 3a5.75 5.75 0 1 1 0 11.5a5.75 5.75 0 0 1 0-11.5zm0 1.5a4.25 4.25 0 1 0 0 8.5a4.25 4.25 0 0 0 0-8.5zM17.5 6a1 1 0 1 1 0 2a1 1 0 0 1 0-2z" />
+    </svg>
+  ),
+  whatsapp: ({ ...props }) => (
+    <svg viewBox="0 0 32 32" fill="currentColor" {...props}>
+      <path d="M16 .4a15.6 15.6 0 0 0-13.7 23.7L.4 31.6l7.8-2.1A15.6 15.6 0 1 0 16 .4zm0 28.3a12.7 12.7 0 0 1-6.4-1.8l-.5-.3l-4.6 1.3l1.3-4.5l-.3-.5a12.7 12.7 0 1 1 10.5 5.8zm7.1-9.5c-.4-.2-2.4-1.2-2.8-1.3s-.6-.2-.9.2s-1 1.3-1.2 1.5s-.4.3-.8.1s-1.5-.6-2.9-1.9c-1.1-1-1.9-2.2-2.1-2.6s0-.6.2-.8s.4-.4.6-.6c.2-.2.3-.4.4-.6c.1-.2 0-.5 0-.7s-.9-2.2-1.2-3s-.6-.7-.9-.7h-.7c-.2 0-.7.1-1.1.5c-.4.4-1.5 1.5-1.5 3.6s1.6 4.2 1.8 4.5s3.1 4.7 7.6 6.4c1.1.5 2 .8 2.7 1c1.1.3 2.1.3 2.9.2c.9-.1 2.4-1 2.7-2s.3-1.8.2-2s-.4-.3-.9-.5z" />
+    </svg>
+  ),
+};

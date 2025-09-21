@@ -46,7 +46,6 @@ export function EventCreationWizard({ open, onOpenChange }: EventCreationWizardP
   }
 
   const handleSubmit = () => {
-    // Handle form submission
     console.log("Creating event:", formData)
     onOpenChange(false)
     setCurrentStep(1)

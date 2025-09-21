@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { usePathname } from "next/navigation"
-import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
-import { ScrollArea } from "@/components/ui/scroll-area"
-import { Icons } from "@/components/icons"
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Icons } from "@/components/icons";
 
 const navigation = [
   {
@@ -34,34 +34,64 @@ const navigation = [
     icon: Icons.calendar,
   },
   {
-    name: "Messages",
+    name: "Coupons",
+    href: "/dashboard/coupons",
+    icon: Icons.coupon, // ✅ TicketPercent
+  },
+  {
+    name: "Operations",
+    href: "/dashboard/operations",
+    icon: Icons.operations, // ✅ Workflow
+  },
+  {
+    name: "One Inbox",
     href: "/dashboard/messages",
     icon: Icons.messageSquare,
   },
   {
-    name: "Notifications",
-    href: "/dashboard/notifications",
-    icon: Icons.bell,
+    name: "Membership & Agents",
+    href: "/dashboard/memberships",
+    icon: Icons.membership, // ✅ IdCard
+  },
+  {
+    name: "OneLink",
+    href: "/dashboard/onelink",
+    icon: Icons.oneLink, // ✅ Link2
+  },
+  {
+    name: "Instagram",
+    href: "/dashboard/instagram",
+    icon: Icons.instagram, // ✅ Custom SVG
+  },
+  {
+    name: "WhatsApp",
+    href: "/dashboard/whatsapp",
+    icon: Icons.whatsapp, // ✅ Custom SVG
+  },
+  {
+    name: "Pickup Points",
+    href: "/dashboard/points",
+    icon: Icons.pickupPoints, // ✅ Package
   },
   {
     name: "Analytics",
     href: "/dashboard/analytics",
-    icon: Icons.analytics,
+    icon: Icons.analytics, // ✅ BarChart3 (or switch to PieChart if you want)
   },
   {
     name: "Team",
     href: "/dashboard/team",
-    icon: Icons.users,
+    icon: Icons.agents, // ✅ Users2
   },
   {
     name: "Settings",
     href: "/dashboard/settings",
     icon: Icons.settings,
   },
-]
+];
 
 export function DashboardSidebar() {
-  const pathname = usePathname()
+  const pathname = usePathname();
 
   return (
     <div className="hidden md:flex md:w-64 md:flex-col">
@@ -79,23 +109,26 @@ export function DashboardSidebar() {
           <ScrollArea className="flex-1 px-3">
             <nav className="space-y-1">
               {navigation.map((item) => {
-                const isActive = pathname === item.href
+                const isActive = pathname === item.href;
                 return (
                   <Link key={item.name} href={item.href}>
                     <Button
                       variant={isActive ? "secondary" : "ghost"}
-                      className={cn("w-full justify-start", isActive && "bg-secondary text-secondary-foreground")}
+                      className={cn(
+                        "w-full justify-start",
+                        isActive && "bg-secondary text-secondary-foreground"
+                      )}
                     >
                       <item.icon className="mr-3 h-4 w-4" />
                       {item.name}
                     </Button>
                   </Link>
-                )
+                );
               })}
             </nav>
           </ScrollArea>
         </div>
       </div>
     </div>
-  )
+  );
 }
